@@ -5,3 +5,4 @@ if [ ${framework} == "tensorflow" ];then
 	}else{
 	echo "--------------pytorch--------------"
 }
+fi
