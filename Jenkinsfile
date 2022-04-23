@@ -9,10 +9,6 @@ pipeline {
             steps{
              echo "hello zhangsan"   
             }
-            
-            steps{
-             echo "hello world"   
-            }
         }
         stage('get'){
             steps{
