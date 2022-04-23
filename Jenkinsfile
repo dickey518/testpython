@@ -4,7 +4,11 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
+                if(${name} == "zhangsan"){
+                echo 'Hello zhangsan'
+                }else{
+                echo "hello world"   
+                }
             }
         }
         stage('get'){
