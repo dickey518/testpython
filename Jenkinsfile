@@ -4,12 +4,13 @@ pipeline {
        choice(name: 'myname', choices: ['zhangsan','lisi','wangwu'],description: 'yigecanshu')   
     }
     stages {
-        stage('Hello') {
+        stage('Hello zhangsan') {
             when {equals expected: 'zhangsan',actual: "${params.myname}"}
             steps{
              echo "hello zhangsan"   
             }
-            
+        }
+        stage('Hello lisi') {
             when {equals expected: 'lisi',actual: "${params.myname}"}
             steps{
              echo "hello lisi"   
