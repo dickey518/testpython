@@ -12,7 +12,6 @@ pipeline {
             steps{
              echo "hello world"   
             }
-            }
         }
         stage('get'){
             steps{
