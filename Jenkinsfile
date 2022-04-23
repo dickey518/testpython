@@ -9,6 +9,11 @@ pipeline {
             steps{
              echo "hello zhangsan"   
             }
+            
+            when {equals expected: 'lisi',actual: "${params.myname}"}
+            steps{
+             echo "hello lisi"   
+            }
         }
         stage('get'){
             steps{
