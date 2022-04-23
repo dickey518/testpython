@@ -5,12 +5,13 @@ pipeline {
     }
     stages {
         stage('Hello') {
+            when {equals expected: 'zhangsan',actual: "${params.myname}"}
             steps{
-                if("${params.myname}" == "zhangsan"){
-            echo "hello zhangsan"
-                }else{
-                 echo "hello world"   
-                }
+             echo "hello zhangsan"   
+            }
+            
+            steps{
+             echo "hello world"   
             }
         }
         stage('get'){
