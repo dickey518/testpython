@@ -1,16 +1,16 @@
 pipeline {
     agent any
     parameters{
-       choice(name: 'name', choices: ['zhangsan','lisi','wangwu'],description: 'yigecanshu')   
+       choice(name: 'myname', choices: ['zhangsan','lisi','wangwu'],description: 'yigecanshu')   
     }
     stages {
         stage('Hello') {
-                when { params name: 'name',value: 'zhangsan' }
             steps{
+                if("${params.myname}" == "zhangsan"){
             echo "hello zhangsan"
-            }
-            steps{
-             echo "hello world"   
+                }else{
+                 echo "hello world"   
+                }
             }
         }
         stage('get'){
