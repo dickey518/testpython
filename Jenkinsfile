@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                if(${name} == "zhangsan"){
+                if("${name}" == "zhangsan"){
                 echo 'Hello zhangsan'
                 }else{
                 echo "hello world"   
