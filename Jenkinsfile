@@ -1,7 +1,8 @@
 pipeline {
     agent any
     stages {
-        stage('Hello zhangsan') {
+        stage('Hello somebody') {
+            steps{
             script{
                 if( "${myname}" == "zhangsan" ){
                  echo "hello zhangsan"   
@@ -10,6 +11,7 @@ pipeline {
                 }else{
                  echo "hello strangers"   
                 }
+            }
             }
         }
         stage('get'){
