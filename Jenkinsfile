@@ -1,19 +1,15 @@
 pipeline {
     agent any
-    parameters{
-       choice(name: 'myname', choices: ['zhangsan','lisi','wangwu'],description: 'yigecanshu')   
-    }
     stages {
         stage('Hello zhangsan') {
-            when {equals expected: 'zhangsan',actual: "${params.myname}"}
-            steps{
-             echo "hello zhangsan"   
-            }
-        }
-        stage('Hello lisi') {
-            when {equals expected: 'lisi',actual: "${params.myname}"}
-            steps{
-             echo "hello lisi"   
+            script{
+                if( "${myname}" == "zhangsan" ){
+                 echo "hello zhangsan"   
+                }else if("${myname}" == "lisi"){
+                 echo "hello lisi"   
+                }else{
+                 echo "hello strangers"   
+                }
             }
         }
         stage('get'){
